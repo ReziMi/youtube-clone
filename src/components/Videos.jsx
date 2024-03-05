@@ -3,8 +3,12 @@ import { Stack, Box } from '@mui/material';
 import VideoCard from './VideoCard';
 import ChannelCard from './ChannelCard';
 
-
 const Videos = ({ videos }) => {
+  // Check if videos is null or undefined
+  if (videos === null || videos === undefined) {
+    return null; // Return null or some other placeholder component
+  }
+
   return (
     <Stack direction="row" flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
       {videos.map((item, idx) => (
